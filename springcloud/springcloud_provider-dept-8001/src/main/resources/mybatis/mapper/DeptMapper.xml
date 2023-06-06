@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hui.springcloud.dao.DeptDao">
+    <insert id="addDept" parameterType="com.hui.springcloud.pojo.Dept">
+      insert into dept(dname,db_source)
+      values (#{dname},DATABASE())
+    </insert>
+
+    <select id="queryById" resultType="com.hui.springcloud.pojo.Dept" parameterType="int">
+        select *
+        from dept
+        where deptno = #{deptno}
+    </select>
+
+    <select id="queryAll" resultType="com.hui.springcloud.pojo.Dept">
+        select *
+        from dept
+
+    </select>
+
+
+
+
+
+
+</mapper>
+
