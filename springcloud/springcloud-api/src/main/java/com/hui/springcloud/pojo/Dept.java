@@ -17,6 +17,9 @@ public class Dept implements Serializable {//实体类 orm 类表关系映射
         this.dname = dname;
     }
     /*
+
+
+
     链式写法：
     Dept dept = new Dept（）；
     dept.setDeptNo(11).setDname('ssss').setDb_source();

@@ -960,24 +960,92 @@ SELECT|sys.sys_config:null
       <ObjectGrants>SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,RELOAD,SHUTDOWN,PROCESS,FILE,REFERENCES,INDEX,ALTER,SHOW DATABASES,SUPER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,REPLICATION SLAVE,REPLICATION CLIENT,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,CREATE USER,EVENT,TRIGGER,CREATE TABLESPACE,CREATE ROLE,DROP ROLE!
 </ObjectGrants>
     </user>
-    <table id="302" parent="2" name="dept"/>
-    <column id="303" parent="302" name="deptno">
+    <table id="302" parent="2" name="course"/>
+    <table id="303" parent="2" name="dept"/>
+    <table id="304" parent="2" name="sc"/>
+    <table id="305" parent="2" name="student"/>
+    <column id="306" parent="302" name="cno">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="307" parent="302" name="cname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="308" parent="302" name="ctime">
+      <Position>3</Position>
+      <DataType>varchar(40)|0s</DataType>
+    </column>
+    <key id="309" parent="302" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cno</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="310" parent="303" name="deptno">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="304" parent="302" name="db_source">
+    <column id="311" parent="303" name="db_source">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="305" parent="302" name="dname">
+    <column id="312" parent="303" name="dname">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="306" parent="302" name="PRIMARY">
+    <key id="313" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>deptno</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="314" parent="304" name="sno">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="315" parent="304" name="cno">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="316" parent="304" name="score">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <key id="317" parent="304" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sno
+cno</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="318" parent="305" name="sno">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="319" parent="305" name="sname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="320" parent="305" name="sage">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="321" parent="305" name="sgrade">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="322" parent="305" name="ssex">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="323" parent="305" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sno</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>
