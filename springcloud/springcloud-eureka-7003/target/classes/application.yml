@@ -1,0 +1,15 @@
+server:
+  port: 7003
+#Eureka配置
+eureka:
+  instance:
+    hostname: eureka7003.com #Eureka服务端的实例名称
+  client:
+    register-with-eureka: false #表示是否向eureka注册中心注册自己
+
+    fetch-registry: false #如果为false，则表示自己为注册中心
+    service-url:  #监控页面
+      #单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #集群（关联）：这种配置不可以 、、跟着视频来的 他的通了。。我测的时候也通了。。但是加了ribbon就崩了
+      defaultZone: http://127.0.0.1:7001/eureka,http://127.0.0.1:7002/eureka
+

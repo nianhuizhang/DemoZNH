@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hui.springcloud.dao.StudentDao">
+    <insert id="addStudent" parameterType="com.hui.springcloud.pojo.Student">
+      insert into student(Sno,Sname,Sage,Sgrade,Ssex)
+      values (#{Sno},#{Sname},#{Sage},#{Sgrade},#{Ssex})
+    </insert>
+
+    <select id="queryById" resultType="Student">
+        select *
+        from Studdent
+        where sno = #{id}
+    </select>
+    <select id="queryAll" resultType="list">
+        select *
+        from student
+    </select>
+    <delete id="deleteById">
+        delete
+        from student
+        where sno = #{id}
+    </delete>
+    <update id="updateById" parameterType="Student">
+        update Student set
+        sname = #{sname},
+        sage = #{sage},
+        sgrade = #{sgrade},
+        ssex = #{ssex}
+        where sno = #{sn}
+    </update>
+
+
+
+
+
+
+
+</mapper>
+
+

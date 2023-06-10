@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hui.springcloud.dao.CourseDao">
+    <insert id="addCourse" parameterType="com.hui.springcloud.pojo.Course">
+      insert into course
+      values (#{cno},#{cname},#{ctime})
+    </insert>
+
+    <select id="queryById" resultType="Course">
+        select *
+        from Course
+        where cno = #{id}
+    </select>
+    <select id="queryAll" resultType="list">
+        select *
+        from course
+    </select>
+    <delete id="deleteById">
+        delete
+        from course
+        where cno = #{id}
+    </delete>
+    <update id="updateById" parameterType="Course">
+    update course set
+    cname = #{cname},
+    ctime = #{ctime}
+    where cno = #{cno}
+
+</update>
+
+
+
+
+
+</mapper>
+
