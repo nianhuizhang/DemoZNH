@@ -41,13 +41,6 @@ public class MyArraylist {
             }
         });
         System.out.println(Arrays.toString(arr));
-
-
-
-
-
-
-
     }
 
 
